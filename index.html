@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Developer Roadmap 2026 — Skills, Projects & Career Trail Map</title>
+<meta name="description" content="A scroll-stopping trail map to becoming a job-ready Python developer in 2026: skills, real projects, career routes, and hand-picked training links." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1E9D2;
+    --paper-soft:#E9DFC1;
+    --paper-deep:#DFD3AC;
+    --ink:#1E2A1B;
+    --ink-soft:#4A5A45;
+    --pine:#2F5233;
+    --pine-dark:#1B3320;
+    --lake:#1E6B6B;
+    --marker:#C1440E;
+    --gold:#C99A2E;
+    --line:rgba(30,42,27,0.16);
+    --card:#FBF7EA;
+    --shadow: 0 14px 34px rgba(27,51,32,0.14);
+    --radius: 18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 8% 12%, rgba(47,82,51,0.06) 0, transparent 40%),
+      radial-gradient(circle at 92% 88%, rgba(193,68,14,0.05) 0, transparent 42%);
+  }
+  h1,h2,h3,h4{font-family:"Fraunces", serif; color:var(--pine-dark); letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .mono{font-family:"IBM Plex Mono", monospace;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--pine);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--pine);display:inline-block;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(241,233,210,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width:1160px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-family:"Fraunces", serif; font-weight:700; font-size:20px; color:var(--pine-dark);}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--marker); box-shadow:0 0 0 4px rgba(193,68,14,0.18);}
+  .brand small{display:block; font-family:"IBM Plex Mono", monospace; font-size:10.5px; letter-spacing:.14em; color:var(--ink-soft); font-weight:500; text-transform:uppercase;}
+  .navlinks{display:flex; align-items:center; gap:30px;}
+  .navlinks a{font-size:14.5px; font-weight:500; color:var(--ink); position:relative; padding:4px 0;}
+  .navlinks a::after{content:"";position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--marker); transition:width .25s ease;}
+  .navlinks a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--pine); color:var(--paper); padding:10px 18px; border-radius:999px;
+    font-size:13.5px; font-weight:600; border:1px solid var(--pine);
+    transition:transform .2s ease, background .2s ease;
+  }
+  .nav-cta:hover{background:var(--pine-dark); transform:translateY(-2px);}
+  .burger{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .burger span{width:24px; height:2px; background:var(--ink); display:block; transition:.3s;}
+  .mobile-menu{display:none; flex-direction:column; gap:2px; padding:8px 28px 20px; border-bottom:1px solid var(--line); background:var(--paper);}
+  .mobile-menu a{padding:12px 4px; border-bottom:1px dashed var(--line); font-size:15px; font-weight:500;}
+  .mobile-menu.open{display:flex;}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative; padding:96px 0 60px; overflow:hidden;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:50px; align-items:center;}
+  .hero h1{font-size:clamp(38px,5.2vw,64px); font-weight:700; line-height:1.05; margin-bottom:22px;}
+  .hero h1 em{font-style:normal; color:var(--marker); position:relative; white-space:nowrap;}
+  .hero p.lead{font-size:18px; color:var(--ink-soft); max-width:520px; margin-bottom:34px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:38px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:999px;
+    font-weight:600; font-size:15px; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{background:var(--marker); color:#fff; box-shadow:0 10px 24px rgba(193,68,14,0.32);}
+  .btn-primary:hover{transform:translateY(-3px); box-shadow:0 14px 30px rgba(193,68,14,0.4);}
+  .btn-ghost{border:1.5px solid var(--pine); color:var(--pine-dark);}
+  .btn-ghost:hover{background:var(--pine); color:var(--paper); transform:translateY(-3px);}
+  .hero-stats{display:flex; gap:34px; flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid var(--line); padding-left:14px;}
+  .hero-stats strong{display:block; font-family:"Fraunces",serif; font-size:26px; color:var(--pine-dark);}
+  .hero-stats span{font-size:12.5px; color:var(--ink-soft); font-family:"IBM Plex Mono",monospace; letter-spacing:.04em;}
+
+  .trail-map{position:relative;}
+  .trail-map svg{width:100%; height:auto; overflow:visible;}
+  .pin-pop{
+    position:absolute; background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:8px 12px; font-family:"IBM Plex Mono",monospace; font-size:11.5px; box-shadow:var(--shadow);
+    animation:float 5s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);}}
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:90px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,42px); font-weight:700; margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft); font-size:16.5px;}
+  .band-alt{background:var(--paper-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+
+  /* ---------- WHY STRIP ---------- */
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .why-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 22px; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .why-card:hover{transform:translateY(-6px); box-shadow:var(--shadow);}
+  .why-card .num{font-family:"Fraunces",serif; font-size:32px; color:var(--marker); margin-bottom:8px;}
+  .why-card h4{font-size:16px; margin-bottom:6px;}
+  .why-card p{font-size:14px; color:var(--ink-soft);}
+
+  /* ---------- ROADMAP TRAIL ---------- */
+  .trail-line-wrap{position:relative;}
+  .trail-line-wrap::before{
+    content:""; position:absolute; left:29px; top:12px; bottom:12px; width:2px;
+    background:repeating-linear-gradient(to bottom, var(--pine) 0 10px, transparent 10px 18px);
+  }
+  .checkpoint{position:relative; padding-left:82px; margin-bottom:44px;}
+  .checkpoint:last-child{margin-bottom:0;}
+  .checkpoint .marker{
+    position:absolute; left:0; top:0; width:60px; height:60px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--pine); display:flex; align-items:center; justify-content:center;
+    font-family:"Fraunces",serif; font-weight:700; font-size:20px; color:var(--pine-dark); z-index:2;
+  }
+  .checkpoint-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 28px; box-shadow:0 6px 18px rgba(27,51,32,0.06);
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .checkpoint-card:hover{transform:translateX(6px); box-shadow:var(--shadow); border-color:var(--pine);}
+  .checkpoint-card .tag{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--lake); letter-spacing:.08em; text-transform:uppercase; margin-bottom:8px; display:block;}
+  .checkpoint-card h3{font-size:22px; margin-bottom:10px;}
+  .checkpoint-card p{color:var(--ink-soft); font-size:15px; margin-bottom:14px;}
+  .pill-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill{
+    background:var(--paper-deep); border:1px solid var(--line); color:var(--ink);
+    font-size:12.5px; padding:6px 12px; border-radius:999px; font-family:"IBM Plex Mono",monospace;
+  }
+
+  /* ---------- SKILLS GRID ---------- */
+  .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .skill-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:26px;
+    position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .skill-card:hover{transform:translateY(-6px) rotate(-0.4deg); box-shadow:var(--shadow);}
+  .skill-card .icon{font-size:26px; margin-bottom:14px; display:inline-block;}
+  .skill-card h4{font-size:17px; margin-bottom:8px;}
+  .skill-card p{font-size:14px; color:var(--ink-soft);}
+
+  /* ---------- PROJECTS ---------- */
+  .projects-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .project-card{
+    background:var(--pine-dark); color:var(--paper); border-radius:var(--radius);
+    padding:28px; position:relative; overflow:hidden; min-height:230px;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    transition:transform .3s ease;
+  }
+  .project-card:hover{transform:translateY(-6px);}
+  .project-card::before{
+    content:""; position:absolute; inset:0; opacity:.5;
+    background-image:radial-gradient(circle at 30% 20%, rgba(201,154,46,0.35), transparent 55%),
+                      radial-gradient(circle at 80% 80%, rgba(30,107,107,0.4), transparent 55%);
+  }
+  .project-card .level{
+    font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--gold); position:relative; z-index:1; margin-bottom:10px;
+  }
+  .project-card h4{color:var(--paper); font-size:19px; position:relative; z-index:1; margin-bottom:8px;}
+  .project-card p{color:rgba(241,233,210,0.78); font-size:14px; position:relative; z-index:1;}
+
+  /* ---------- CAREERS ---------- */
+  .careers-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+  .career-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px; display:flex; gap:18px; align-items:flex-start;
+    transition:box-shadow .25s ease, transform .25s ease;
+  }
+  .career-card:hover{box-shadow:var(--shadow); transform:translateY(-4px);}
+  .career-card .avatar{
+    width:52px; height:52px; border-radius:14px; background:var(--paper-deep);
+    display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0;
+  }
+  .career-card h4{font-size:17px; margin-bottom:6px;}
+  .career-card p{font-size:14px; color:var(--ink-soft); margin-bottom:10px;}
+  .career-card .range{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--marker); font-weight:600;}
+
+  /* ---------- COURSES / GUIDE SERVICES ---------- */
+  .courses-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .course-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px; display:flex; flex-direction:column; height:100%;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .course-card:hover{transform:translateY(-6px); box-shadow:var(--shadow); border-color:var(--lake);}
+  .course-card .badge{
+    align-self:flex-start; background:rgba(30,107,107,0.12); color:var(--lake);
+    font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+    padding:5px 10px; border-radius:999px; margin-bottom:14px;
+  }
+  .course-card h4{font-size:18.5px; margin-bottom:10px; line-height:1.3;}
+  .course-card p{font-size:14px; color:var(--ink-soft); margin-bottom:20px; flex-grow:1;}
+  .course-link{
+    display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14.5px;
+    color:var(--pine-dark); border-top:1px dashed var(--line); padding-top:14px;
+  }
+  .course-link .arrow{transition:transform .2s ease;}
+  .course-card:hover .course-link .arrow{transform:translateX(5px);}
+
+  /* ---------- BLOG BANNER ---------- */
+  .blog-banner{
+    background:linear-gradient(120deg, var(--pine) 0%, var(--lake) 100%);
+    border-radius:24px; padding:52px 48px; color:#fff;
+    display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;
+    position:relative; overflow:hidden;
+  }
+  .blog-banner::after{
+    content:"◐"; position:absolute; right:-30px; top:-40px; font-size:220px; opacity:.08; color:#fff;
+  }
+  .blog-banner h3{color:#fff; font-size:clamp(24px,3vw,32px); max-width:520px; position:relative; z-index:1;}
+  .blog-banner p{color:rgba(255,255,255,0.85); margin-top:10px; max-width:480px; position:relative; z-index:1;}
+  .blog-banner .btn{position:relative; z-index:1; background:#fff; color:var(--pine-dark); flex-shrink:0;}
+  .blog-banner .btn:hover{transform:translateY(-3px); box-shadow:0 12px 26px rgba(0,0,0,0.2);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--pine-dark); color:var(--paper); padding:64px 0 26px; margin-top:40px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:50px;}
+  .footer-brand h4{color:var(--paper); font-size:22px; margin-bottom:12px;}
+  .footer-brand p{color:rgba(241,233,210,0.65); font-size:14px; max-width:280px;}
+  .footer-col h5{font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
+  .footer-col a{display:block; color:rgba(241,233,210,0.78); font-size:14.5px; margin-bottom:11px; transition:color .2s, transform .2s; width:fit-content;}
+  .footer-col a:hover{color:#fff; transform:translateX(4px);}
+  .footer-bottom{
+    border-top:1px solid rgba(241,233,210,0.15); padding-top:24px; display:flex;
+    justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+    font-size:13px; color:rgba(241,233,210,0.55);
+  }
+  .socials{display:flex; gap:14px;}
+  .socials a{
+    width:36px; height:36px; border:1px solid rgba(241,233,210,0.25); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:14px; color:rgba(241,233,210,0.8);
+    transition:.2s;
+  }
+  .socials a:hover{background:var(--gold); border-color:var(--gold); color:var(--pine-dark);}
+
+  [data-reveal]{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  [data-reveal].in-view{opacity:1; transform:translateY(0);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .skills-grid{grid-template-columns:repeat(2,1fr);}
+    .projects-grid{grid-template-columns:repeat(2,1fr);}
+    .careers-grid{grid-template-columns:1fr;}
+    .courses-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:680px){
+    .navlinks{display:none;}
+    .nav-cta{display:none;}
+    .burger{display:flex;}
+    .why-grid, .skills-grid, .projects-grid, .courses-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .checkpoint{padding-left:66px;}
+    .checkpoint .marker{width:48px; height:48px; font-size:16px;}
+    .trail-line-wrap::before{left:23px;}
+    .blog-banner{flex-direction:column; align-items:flex-start; padding:36px 26px;}
+    .hero{padding:60px 0 40px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        PY // 2026
+        <small>Developer Trail Map</small>
+      </div>
+    </div>
+    <div class="navlinks">
+      <a href="#roadmap">Roadmap</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#careers">Careers</a>
+      <a href="#courses">Courses</a>
+      <a href="#blog">Field Notes</a>
+    </div>
+    <a href="#courses" class="nav-cta">Start the Trail</a>
+    <button class="burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#roadmap">Roadmap</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#careers">Careers</a>
+    <a href="#courses">Courses</a>
+    <a href="#blog">Field Notes</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div data-reveal>
+      <span class="eyebrow">Route Guide · 2026 Edition</span>
+      <h1>Chart your route<br> from <em>import this</em><br>to job offer.</h1>
+      <p class="lead">A trail map for Python developers — the exact skills to pick up, the checkpoints that mark real progress, and the projects that prove you're ready, all in one scroll.</p>
+      <div class="hero-actions">
+        <a href="#roadmap" class="btn btn-primary">Walk the Roadmap →</a>
+        <a href="#courses" class="btn btn-ghost">Browse Guided Courses</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>5</strong><span>TRAIL CHECKPOINTS</span></div>
+        <div><strong>18+</strong><span>CORE SKILLS MAPPED</span></div>
+        <div><strong>6</strong><span>CAREER ROUTES</span></div>
+      </div>
+    </div>
+    <div class="trail-map" data-reveal>
+      <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="contour" width="60" height="60" patternUnits="userSpaceOnUse">
+            <circle cx="30" cy="30" r="26" fill="none" stroke="#2F5233" stroke-opacity="0.08" stroke-width="1"/>
+            <circle cx="30" cy="30" r="14" fill="none" stroke="#2F5233" stroke-opacity="0.08" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="520" height="460" rx="26" fill="#FBF7EA" stroke="#DFD3AC"/>
+        <rect x="0" y="0" width="520" height="460" rx="26" fill="url(#contour)"/>
+        <path d="M60 400 C 120 340, 40 280, 110 230 S 250 190, 220 130 S 380 90, 360 40"
+              fill="none" stroke="#2F5233" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+        <circle cx="60" cy="400" r="9" fill="#C1440E"/>
+        <circle cx="110" cy="230" r="7" fill="#1E6B6B"/>
+        <circle cx="220" cy="130" r="7" fill="#1E6B6B"/>
+        <circle cx="360" cy="40" r="9" fill="#C99A2E"/>
+        <text x="76" y="404" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1E2A1B">start()</text>
+        <text x="126" y="234" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1E2A1B">build()</text>
+        <text x="236" y="134" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1E2A1B">deploy()</text>
+        <text x="330" y="34" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1E2A1B">hired()</text>
+      </svg>
+      <div class="pin-pop" style="top:8%; right:6%;">🐍 v3.13 ready</div>
+      <div class="pin-pop" style="bottom:10%; left:4%; animation-delay:1.4s;">✅ portfolio: 3 projects</div>
+    </div>
+  </div>
+</section>
+
+<section class="band-alt" id="why">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Basecamp Briefing</span>
+      <h2>Why Python is still the smartest first route in 2026</h2>
+      <p>Before the climb, the terrain report — the reasons Python keeps topping hiring demand across data, backend, and automation roles.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card" data-reveal><div class="num">01</div><h4>Most in-demand core skill</h4><p>Consistently ranked among the top languages requested in backend, data, and automation job listings.</p></div>
+      <div class="why-card" data-reveal><div class="num">02</div><h4>One language, many trails</h4><p>The same fundamentals branch into web development, data analytics, testing, and machine learning.</p></div>
+      <div class="why-card" data-reveal><div class="num">03</div><h4>Shallow learning curve</h4><p>Readable syntax means faster first wins — motivation that keeps beginners on the trail past week one.</p></div>
+      <div class="why-card" data-reveal><div class="num">04</div><h4>Ecosystem built for hiring</h4><p>Frameworks like Django, Flask, and pandas map directly onto real job descriptions employers post today.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">The Route · 5 Checkpoints</span>
+      <h2>Your 2026 roadmap, checkpoint by checkpoint</h2>
+      <p>Every trail has waypoints. Clear each checkpoint before pushing to the next — skipping terrain is how developers get lost mid-climb.</p>
+    </div>
+    <div class="trail-line-wrap">
+      <div class="checkpoint" data-reveal>
+        <div class="marker">1</div>
+        <div class="checkpoint-card">
+          <span class="tag">Basecamp — Weeks 1–4</span>
+          <h3>Python Fundamentals</h3>
+          <p>Syntax, variables, control flow, functions, error handling, and the habit of reading the official docs before Stack Overflow.</p>
+          <div class="pill-row"><span class="pill">Data types</span><span class="pill">Loops &amp; functions</span><span class="pill">Git &amp; GitHub</span><span class="pill">Virtual environments</span></div>
+        </div>
+      </div>
+      <div class="checkpoint" data-reveal>
+        <div class="marker">2</div>
+        <div class="checkpoint-card">
+          <span class="tag">Ridge Line — Weeks 5–8</span>
+          <h3>Data Structures &amp; OOP</h3>
+          <p>Classes, inheritance, comprehensions, and the standard-library structures that show up in every technical interview.</p>
+          <div class="pill-row"><span class="pill">OOP &amp; classes</span><span class="pill">Lists / dicts / sets</span><span class="pill">File handling</span><span class="pill">Unit testing</span></div>
+        </div>
+      </div>
+      <div class="checkpoint" data-reveal>
+        <div class="marker">3</div>
+        <div class="checkpoint-card">
+          <span class="tag">Mountain Pass — Weeks 9–14</span>
+          <h3>Web, APIs &amp; Databases</h3>
+          <p>Ship something that runs on a server: REST APIs, SQL, and a framework — Django or Flask — connected to a live database.</p>
+          <div class="pill-row"><span class="pill">Django / Flask</span><span class="pill">REST APIs</span><span class="pill">SQL &amp; ORMs</span><span class="pill">Auth &amp; deployment</span></div>
+        </div>
+      </div>
+      <div class="checkpoint" data-reveal>
+        <div class="marker">4</div>
+        <div class="checkpoint-card">
+          <span class="tag">Summit Camp — Weeks 15–20</span>
+          <h3>Data, Automation &amp; Testing</h3>
+          <p>Branch into the specialty that fits your career route: data analytics, QA automation, or the beginnings of machine learning.</p>
+          <div class="pill-row"><span class="pill">pandas / NumPy</span><span class="pill">Power BI</span><span class="pill">Selenium</span><span class="pill">Scripting &amp; scraping</span></div>
+        </div>
+      </div>
+      <div class="checkpoint" data-reveal>
+        <div class="marker">5</div>
+        <div class="checkpoint-card">
+          <span class="tag">Summit — Weeks 21–24</span>
+          <h3>Portfolio &amp; Job Readiness</h3>
+          <p>Three deployed projects, a polished GitHub profile, mock interviews, and a resume built around outcomes, not tool lists.</p>
+          <div class="pill-row"><span class="pill">Portfolio site</span><span class="pill">System design basics</span><span class="pill">Mock interviews</span><span class="pill">Resume &amp; LinkedIn</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-alt" id="skills">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Gear Check</span>
+      <h2>Skills every 2026 Python developer packs</h2>
+      <p>The core kit, grouped by what it's actually used for on the job — not just a syllabus list.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card" data-reveal><span class="icon">🧭</span><h4>Core Python 3.13</h4><p>Syntax fluency, comprehensions, decorators, generators, and idiomatic "Pythonic" code.</p></div>
+      <div class="skill-card" data-reveal><span class="icon">🗂️</span><h4>Data Structures &amp; Algorithms</h4><p>Enough DSA to pass screening rounds and write code that scales past a toy dataset.</p></div>
+      <div class="skill-card" data-reveal><span class="icon">🛠️</span><h4>Django &amp; Flask</h4><p>Building and shipping real backend services, routing, templating, and middleware.</p></div>
+      <div class="skill-card" data-reveal><span class="icon">🗄️</span><h4>SQL &amp; Databases</h4><p>PostgreSQL/MySQL fundamentals, schema design, and query optimization.</p></div>
+      <div class="skill-card" data-reveal><span class="icon">📊</span><h4>Data Analytics</h4><p>pandas, NumPy, and Power BI to turn raw data into decisions stakeholders trust.</p></div>
+      <div class="skill-card" data-reveal><span class="icon">🤖</span><h4>Test Automation</h4><p>Selenium and pytest to automate QA and ship with confidence, not crossed fingers.</p></div>
+      <div class="skill-card" data-reveal><span class="icon">🌐</span><h4>JavaScript Basics</h4><p>Enough JS to work across the stack, debug frontend issues, and speak your team's language.</p></div>
+      <div class="skill-card" data-reveal><span class="icon">☁️</span><h4>Git, APIs &amp; Deployment</h4><p>Version control, REST integration, and getting a project live outside your laptop.</p></div>
+      <div class="skill-card" data-reveal><span class="icon">🧩</span><h4>Problem Solving</h4><p>The transferable skill under every checkpoint — breaking a vague problem into buildable steps.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Prove It</span>
+      <h2>Projects that get you noticed, not just graded</h2>
+      <p>Recruiters skim resumes but click on repos. Build these to turn a roadmap into a portfolio.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card" data-reveal><span class="level">Beginner</span><h4>CLI Expense Tracker</h4><p>File handling, arg parsing, and clean project structure — your first "real" tool.</p></div>
+      <div class="project-card" data-reveal><span class="level">Beginner</span><h4>Web Scraper + Dashboard</h4><p>Pull live data with BeautifulSoup and visualize it — the analytics track in one repo.</p></div>
+      <div class="project-card" data-reveal><span class="level">Intermediate</span><h4>Django Job-Board API</h4><p>Auth, models, REST endpoints, and a deployed backend recruiters can actually open.</p></div>
+      <div class="project-card" data-reveal><span class="level">Intermediate</span><h4>Selenium Test Suite</h4><p>Automate a full user flow end-to-end — the exact skill QA/SDET roles screen for.</p></div>
+      <div class="project-card" data-reveal><span class="level">Advanced</span><h4>Power BI Sales Dashboard</h4><p>Connect Python-cleaned data to Power BI for an interactive, stakeholder-ready report.</p></div>
+      <div class="project-card" data-reveal><span class="level">Advanced</span><h4>Full-Stack Capstone</h4><p>Python + JavaScript, database, auth, and deployment — your summit-day portfolio piece.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-alt" id="careers">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Where the Trail Leads</span>
+      <h2>Career routes open to 2026 Python developers</h2>
+      <p>The same roadmap, viewed from six different job titles you could be walking into.</p>
+    </div>
+    <div class="careers-grid">
+      <div class="career-card" data-reveal><div class="avatar">🐍</div><div><h4>Python / Backend Developer</h4><p>Build and maintain the services that power products — APIs, databases, and business logic.</p><span class="range">Entry → Mid-level</span></div></div>
+      <div class="career-card" data-reveal><div class="avatar">📈</div><div><h4>Data Analyst</h4><p>Turn raw data into dashboards and decisions using Python, SQL, and Power BI.</p><span class="range">Entry → Mid-level</span></div></div>
+      <div class="career-card" data-reveal><div class="avatar">🧪</div><div><h4>QA / Automation Engineer</h4><p>Design automated test suites with Selenium and Python to keep releases reliable.</p><span class="range">Entry → Mid-level</span></div></div>
+      <div class="career-card" data-reveal><div class="avatar">🧰</div><div><h4>Full-Stack Developer</h4><p>Pair Python backends with JavaScript and modern frontend stacks like MERN.</p><span class="range">Mid-level</span></div></div>
+      <div class="career-card" data-reveal><div class="avatar">🤖</div><div><h4>Automation / Scripting Engineer</h4><p>Build internal tools and workflows that save teams hours every week.</p><span class="range">Entry → Mid-level</span></div></div>
+      <div class="career-card" data-reveal><div class="avatar">🧠</div><div><h4>Junior ML / Data Engineer</h4><p>Use Python's data stack as the on-ramp into machine learning and pipelines.</p><span class="range">Mid-level</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Guide Services</span>
+      <h2>Skip the guesswork — train with a guide</h2>
+      <p>Hands-on, classroom-style bootcamps and courses in Mumbai mapped to the checkpoints above.</p>
+    </div>
+    <div class="courses-grid">
+      <div class="course-card" data-reveal>
+        <span class="badge">Core Language</span>
+        <h4>Python Training in Mumbai</h4>
+        <p>Classroom training covering Python fundamentals through OOP — the foundation for every checkpoint on this map.</p>
+        <a class="course-link" href="https://www.justacademy.co/course-detail/mumbai/python-training-in-mumbai" target="_blank" rel="noopener">View course <span class="arrow">→</span></a>
+      </div>
+      <div class="course-card" data-reveal>
+        <span class="badge">Data Route</span>
+        <h4>Data Analytics Bootcamp in Mumbai</h4>
+        <p>Classroom training with real-world projects — the fastest way onto the Data Analyst career route.</p>
+        <a class="course-link" href="https://www.justacademy.co/job-bootcamp-detail/mumbai/data-analytics-bootcamp-in-mumbai-classroom-training-with-real-world-projects" target="_blank" rel="noopener">View bootcamp <span class="arrow">→</span></a>
+      </div>
+      <div class="course-card" data-reveal>
+        <span class="badge">Full-Stack Route</span>
+        <h4>MERN Stack Developer Bootcamp in Mumbai</h4>
+        <p>Full-stack web development classroom training for developers pairing Python with modern JS stacks.</p>
+        <a class="course-link" href="https://www.justacademy.co/job-bootcamp-detail/mumbai/mern-stack-developer-bootcamp-in-mumbai-full-stack-web-development-classroom-training" target="_blank" rel="noopener">View bootcamp <span class="arrow">→</span></a>
+      </div>
+      <div class="course-card" data-reveal>
+        <span class="badge">Visualization</span>
+        <h4>Microsoft Power BI Training in Mumbai</h4>
+        <p>Turn cleaned data into dashboards stakeholders actually read — a key Summit Camp checkpoint skill.</p>
+        <a class="course-link" href="https://www.justacademy.co/course-detail/mumbai/microsoft-power-bi-training-in-mumbai" target="_blank" rel="noopener">View course <span class="arrow">→</span></a>
+      </div>
+      <div class="course-card" data-reveal>
+        <span class="badge">QA Route</span>
+        <h4>Selenium Training in Mumbai</h4>
+        <p>Automated testing with Selenium and Python — the direct path to QA/Automation Engineer roles.</p>
+        <a class="course-link" href="https://www.justacademy.co/course-detail/mumbai/selenium-training-in-mumbai" target="_blank" rel="noopener">View course <span class="arrow">→</span></a>
+      </div>
+      <div class="course-card" data-reveal>
+        <span class="badge">Cross-Stack</span>
+        <h4>JavaScript Training in Mumbai</h4>
+        <p>Frontend fundamentals to complement your Python backend and speak your whole team's language.</p>
+        <a class="course-link" href="https://www.justacademy.co/course-detail/mumbai/javascript-training-in-mumbai" target="_blank" rel="noopener">View course <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-alt" id="blog">
+  <div class="wrap">
+    <div class="blog-banner" data-reveal>
+      <div>
+        <h3>Field Notes: Why a Python Institute matters more than a playlist of tutorials</h3>
+        <p>A deeper read on structured, guided learning versus scattered self-study — straight from the trail journal.</p>
+      </div>
+      <a class="btn" href="https://www.justacademy.co/blog-detail/python-institute" target="_blank" rel="noopener">Read the blog →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>PY // 2026</h4>
+        <p>An open trail map to becoming a job-ready Python developer — skills, projects, and career routes, laid out checkpoint by checkpoint.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Trail</h5>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#careers">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h5>Guide Services</h5>
+        <a href="https://www.justacademy.co/course-detail/mumbai/python-training-in-mumbai" target="_blank" rel="noopener">Python Training</a>
+        <a href="https://www.justacademy.co/job-bootcamp-detail/mumbai/data-analytics-bootcamp-in-mumbai-classroom-training-with-real-world-projects" target="_blank" rel="noopener">Data Analytics Bootcamp</a>
+        <a href="https://www.justacademy.co/job-bootcamp-detail/mumbai/mern-stack-developer-bootcamp-in-mumbai-full-stack-web-development-classroom-training" target="_blank" rel="noopener">MERN Stack Bootcamp</a>
+        <a href="https://www.justacademy.co/course-detail/mumbai/microsoft-power-bi-training-in-mumbai" target="_blank" rel="noopener">Power BI Training</a>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <a href="https://www.justacademy.co/course-detail/mumbai/selenium-training-in-mumbai" target="_blank" rel="noopener">Selenium Training</a>
+        <a href="https://www.justacademy.co/course-detail/mumbai/javascript-training-in-mumbai" target="_blank" rel="noopener">JavaScript Training</a>
+        <a href="https://www.justacademy.co/blog-detail/python-institute" target="_blank" rel="noopener">Field Notes / Blog</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Python Developer Roadmap · Built for anyone starting the climb.</span>
+      <div class="socials">
+        <a href="#" aria-label="GitHub">gh</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">tw</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
